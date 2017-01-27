@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.5/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.5/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.5/addons/p5.sound.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div id="top-row" class="row">
+          <h1>Which Indian state is this?</h1>
+          <h4 id = "score_tally"></h4>
+          <h4>Score: </h4>
+        </div>
+        <div id="options" class="row">
+          <a href="#" id="option0" class="option_item">Option0</a>
+          <a href="#" id="option1" class="option_item">Option1</a>
+          <a href="#" id="option2" class="option_item">Option2</a>
+          <a href="#" id="option3" class="option_item">Option3</a>
+        </div>
+        <div id="success" class="row">
+          <p class = "success_text"></p>
+          <a href="#" class="next_button">GIVE ME ONE MORE</a>
+        </div>
+        <div id="failure" class="row">
+          <p class = "failure_text"></p>
+          <a href="#" class="next_button">GIVE ME ONE MORE</a>
+        </div>
+      </header>
+      <div id="map"></div>
+      <button id="reset"> RESET MAP</button>
+    </div>
+    <script src="game.js"></script>
+  </body>
+</html>
