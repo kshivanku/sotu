@@ -15,12 +15,14 @@ var max_zoom = 18;
 var min_zoom = 12;
 var min_zoom_dispabled = 8;
 var screen_option=[];
+var success_sound;
+var failure_sound;
 
 function setup(){
   noCanvas();
 
   //LOADING JSON FILE
-  $.getJSON("latlongdata_india.json", dataready);
+  $.getJSON("latlongdata.json", dataready);
 
   //DISPLAY STARTING SCORE (0/0)
   display_score();
@@ -53,6 +55,10 @@ function setup(){
       getoptions();
     });
   }
+
+  success_sound = loadSound('correct.wav');
+  failure_sound = loadSound('incorrect.mp3');
+
 }
 
 function display_score(){
@@ -102,9 +108,11 @@ function display_options(){
 function check_answer(){
   console.log("checking answer");
   if(this.elt.innerHTML == latlongdata[correct_option].state){
+    success_sound.play();
     display_success();
   }
   else{
+    failure_sound.play();
     display_failure(this.elt.innerHTML);
   }
 }

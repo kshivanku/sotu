@@ -68,6 +68,10 @@ margin: auto;
   border-right: 0px;
 }
 
+.option_item:hover {
+  color: #405E9D;
+}
+
 /*#options {
   display: none;
 }*/
@@ -81,11 +85,11 @@ margin: auto;
 }
 
 #success {
-  background-color: green;
+  background-color: #0EB275;
 }
 
 #failure {
-  background-color: red;
+  background-color: #A21C2D;
 }
 
 #success p , #failure p {
@@ -96,6 +100,10 @@ margin: auto;
   float: right;
   text-decoration: none;
   color: white;
+}
+
+#success a:hover , #failure a:hover {
+  font-weight: 600;
 }
 
 #map {
@@ -114,11 +122,16 @@ button {
   right: 2.5%;
   z-index: 100;
   cursor: pointer;
-  background-color: #3C82E2;
+  background-color: #405E9D;
   color: white;
   box-shadow: 5px 5px 5px #d4d4d4;
   border-radius: 5px;
-  border: 1px solid #3C82E2;
+  border: 1px solid #405E9D;
   font-size: 13px;
   text-transform: capitalize;
+}
+
+button:hover {
+  background-color: #324B7D;
+  border-color: #324B7D;
 }
