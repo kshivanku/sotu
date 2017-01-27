@@ -17,15 +17,23 @@ var min_zoom_dispabled = 8;
 var screen_option=[];
 var success_sound;
 var failure_sound;
+var selected_country = "US";
+var main_heading;
+var country_control;
 
 function setup(){
   noCanvas();
 
   //LOADING JSON FILE
-  $.getJSON("latlongdata.json", dataready);
+  loaddata();
 
   //DISPLAY STARTING SCORE (0/0)
   display_score();
+
+  //SETTING HEADING ACCORDING TO USER SELECTION
+  main_heading = select("#main_heading");
+  country_control = select("#country_control");
+  country_control.mousePressed(switch_country);
 
   //THESE THREE BUCKETS WILL APPEAR IN SAME AREA DEPENDING ON CONTEXT
   option_list = select("#options");
@@ -45,7 +53,7 @@ function setup(){
   //REFOCUSSING MAP TO ORIGINAL
   reset_button = select("#reset");
   reset_button.mousePressed(function(){
-    initialize_map(correct_option, min_zoom);
+    initialize_map(correct_option);
   });
 
   //AVAILABLE IN SUCCESS/FAILURE MESSAGES
@@ -59,6 +67,33 @@ function setup(){
   success_sound = loadSound('correct.wav');
   failure_sound = loadSound('incorrect.mp3');
 
+}
+
+function switch_country(){
+  console.log("here");
+  if(selected_country == "US"){
+    selected_country = "India";
+    main_heading.html("Which Indian state is this?");
+    country_control.html("play with US states");
+  }
+  else if(selected_country == "India"){
+    selected_country = "US";
+    main_heading.html("Which US state is this?");
+    country_control.html("play with states in India");
+  }
+  correct_answers = 0;
+  total_questions = 0;
+  display_score();
+  loaddata();
+}
+
+function loaddata(){
+  if(selected_country == "US"){
+    $.getJSON("latlongdata.json", dataready);
+  }
+  else if(selected_country == "India"){
+    $.getJSON("latlongdata_india.json", dataready);
+  }
 }
 
 function display_score(){
