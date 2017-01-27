@@ -74,12 +74,12 @@ function switch_country(){
   if(selected_country == "US"){
     selected_country = "India";
     main_heading.html("Which Indian state is this?");
-    country_control.html("play with US states");
+    country_control.html("change country to US");
   }
   else if(selected_country == "India"){
     selected_country = "US";
     main_heading.html("Which US state is this?");
-    country_control.html("play with states in India");
+    country_control.html("change country to India");
   }
   correct_answers = 0;
   total_questions = 0;
