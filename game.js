@@ -73,12 +73,12 @@ function switch_country(){
   console.log("here");
   if(selected_country == "US"){
     selected_country = "India";
-    main_heading.html("Which Indian state is this?");
+    main_heading.html("Select which Indian state is shown below");
     country_control.html("change country to US");
   }
   else if(selected_country == "India"){
     selected_country = "US";
-    main_heading.html("Which US state is this?");
+    main_heading.html("Select which US state is shown below");
     country_control.html("change country to India");
   }
   correct_answers = 0;
