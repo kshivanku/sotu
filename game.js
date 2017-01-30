@@ -183,4 +183,5 @@ function initialize_map(option){
     maxZoom: max_zoom,
     minZoom: min_zoom
   }).addTo(map_area);
+  L.marker([xpos, ypos]).addTo(map_area);
 }
